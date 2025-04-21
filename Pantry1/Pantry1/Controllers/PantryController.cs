@@ -58,5 +58,35 @@ namespace Pantry1API.Controllers
             await _context.SaveChangesAsync();
             return Ok(item);
         }
+
+        [HttpGet("paged")]
+        public async Task<IActionResult> GetPaginatedItems(int page = 1, int pageSize = 5)
+        {
+         
+
+            var totalItems = await _context.Pantry.CountAsync();
+
+            var items = await _context.Pantry
+                                      .OrderBy(p => p.Id)
+                                      .Skip((page - 1) * pageSize)
+                                      .Take(pageSize)
+                                      .ToListAsync();
+
+            var response = new
+            {
+                TotalItems = totalItems,
+                Page = page,
+                PageSize = pageSize,
+                Items = items
+            };
+
+            return Ok(response);
+        }
+
+
+
     }
 }
+
+
+

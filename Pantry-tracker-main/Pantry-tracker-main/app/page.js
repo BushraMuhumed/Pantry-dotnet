@@ -10,63 +10,61 @@ export default function Home() {
   const [itemname, setItemname] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredPantry, setFilteredPantry] = useState([]);
+  const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalItems, setTotalItems] = useState(0);
+  const pageSize = 5;
 
-  const updatePantry = async () => {
-    const response = await axios.get(API_BASE);
-    const pantryList = response.data.map((item) => ({
-      name: item.name,
-      quantity: item.quantity,
-    }));
-    setPantry(pantryList);
+
+
+  const fetchData = async (page) => {
+
+    const res = await fetch(`http://localhost:5281/api/Pantry/paged?page=${page}&pageSize=${pageSize}`);
+    const result = await res.json();
+
+    setData(result.items);
+    setTotalItems(result.totalItems);
   };
+
+  const totalPages = Math.ceil(totalItems / pageSize);
+
+  const handlePageChange = (page) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+      
+    }
+  };
+
+
+  useEffect(() => {
+    fetchData(currentPage);
+  }, [currentPage]);
+
   
   const addItem = async (item) => {
     await axios.post(`${API_BASE}/${item}`);
-    await updatePantry();
+    await fetchData(currentPage); 
+    
   };
   
   const removeItem = async (item) => {
     await axios.delete(`${API_BASE}/${item}`);
-    await updatePantry();
+    await fetchData(currentPage); 
+   
   };
 
-  useEffect(() => {
-    updatePantry();
-  }, []);
+  
+
 
   useEffect(() => {
     setFilteredPantry(
-      pantry.filter(item =>
+      data.filter(item =>
         item.name.toLowerCase().includes(searchTerm.toLowerCase())
       )
     );
-  }, [searchTerm, pantry]);
+  }, [searchTerm, data]);
+  
 
-  const fetchRecipes = async () => {
-    const ingredients = pantry.map(item => item.name).join(', ');
-    try {
-      const response = await fetch('https://api.edamam.com/search', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        params: {
-          q: ingredients,
-          app_id: 'YOUR_APP_ID', 
-          app_key: 'YOUR_APP_KEY', 
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      const data = await response.json();
-      setRecipes(data.hits.map(hit => hit.recipe));
-    } catch (error) {
-      console.error('Error fetching recipes:', error);
-    }
-  };
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -94,7 +92,7 @@ export default function Home() {
       </AppBar>
 
       <Box
-        marginTop="64px" // Adjust for AppBar height
+        marginTop="64px" 
         width="100vw"
         display="flex"
         flexDirection="column"
@@ -181,6 +179,7 @@ export default function Home() {
               Pantry Tracker
             </Typography>
           </Box>
+    
 
           <Stack width="100%" spacing={2} overflow="auto">
             {filteredPantry.map(({ name, quantity }) => (
@@ -224,6 +223,29 @@ export default function Home() {
               </Box>
             ))}
           </Stack>
+
+
+      <div className="flex justify-center items-center space-x-2 mt-4">
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+          className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+        >
+          Prev
+        </button>
+
+      
+
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+        >
+          Next
+        </button>
+      </div>
+
+
         </Box>
       </Box>
     </Box>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pantry1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+828a1caa300921585985a2199dba81f1e94bc419")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pantry1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pantry1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
