@@ -8,6 +8,10 @@ Accept: application/json
 @name=string
 POST {{Pantry1_HostAddress}}/api/pantry/{{name}}
 
+  
+
+
+
 ###
 
 POST {{Pantry1_HostAddress}}/api/pantry/{{name}}
@@ -15,5 +19,72 @@ POST {{Pantry1_HostAddress}}/api/pantry/{{name}}
 ###
 
 DELETE {{Pantry1_HostAddress}}/api/pantry/{{name}}
+
+
+
+###
+
+POST {{Pantry1_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+}
+
+###
+
+POST {{Pantry1_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  
+}
+
+###
+
+
+POST {{Pantry1_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+}
+
+
+
+
+
+
+###
+
+POST {{Pantry1_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  
+}
+
+###
+
+
+###
+
+@id=0
+DELETE {{Pantry1_HostAddress}}/api/admin/delete-user/{{id}}
+
+###
+
+GET {{Pantry1_HostAddress}}/api/admin/users
+
+###
+
+GET {{Pantry1_HostAddress}}/api/admin/users
+
+###
+
+POST {{Pantry1_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+ 
+}
 
 ###

@@ -164,3 +164,5 @@ C:\Users\taeeu\Desktop\pantry\Pantry1\Pantry1\obj\Debug\net9.0\Pantry1.pdb
 C:\Users\taeeu\Desktop\pantry\Pantry1\Pantry1\obj\Debug\net9.0\Pantry1.genruntimeconfig.cache
 C:\Users\taeeu\Desktop\pantry\Pantry1\Pantry1\obj\Debug\net9.0\ref\Pantry1.dll
 C:\Users\taeeu\Desktop\pantry\Pantry1\Pantry1\obj\Debug\net9.0\Pantry1.sourcelink.json
+C:\Users\taeeu\Desktop\pantry\Pantry1\Pantry1\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\taeeu\Desktop\pantry\Pantry1\Pantry1\bin\Debug\net9.0\BCrypt.Net-Next.dll

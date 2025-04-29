@@ -8,5 +8,8 @@ namespace Pantry1API.Data
         public PantryContext(DbContextOptions<PantryContext> options) : base(options) { }
 
         public DbSet<Pantry> Pantry { get; set; }
+        public DbSet<User> Users { get; set; }
+
+        
     }
 }

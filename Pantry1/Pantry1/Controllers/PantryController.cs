@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pantry1API.Data;
 using Pantry1API.Models;
+using System.Security.Claims;
 
 namespace Pantry1API.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
+    
     public class PantryController : ControllerBase
     {
         private readonly PantryContext _context;
@@ -16,77 +19,116 @@ namespace Pantry1API.Controllers
             _context = context;
         }
 
+        
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Pantry>>> GetPantryItems()
+        public async Task<IActionResult> GetPantryItems()
         {
-            return await _context.Pantry.ToListAsync();
-        }
+            var role = User.FindFirst(ClaimTypes.Role)?.Value;
 
-        [HttpPost("{name}")]
-        public async Task<IActionResult> AddItem(string name)
-        {
-            var item = await _context.Pantry.FirstOrDefaultAsync(p => p.Name == name);
-            if (item != null)
+            if (role == "Admin")
             {
-                item.Quantity++;
+                
+                var allItems = await _context.Pantry
+                    .Include(p => p.User)
+                    .Select(p => new
+                    {
+                        p.Id,
+                        p.Name,
+                        p.Quantity,
+                        User = p.User.Username
+                    })
+                    .ToListAsync();
+
+                return Ok(allItems);
             }
             else
             {
-                item = new Pantry { Name = name, Quantity = 1 };
+                
+                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+                var items = await _context.Pantry
+                    .Where(p => p.UserId == userId)
+                    .Select(p => new
+                    {
+                        p.Id,
+                        p.Name,
+                        p.Quantity
+                    })
+                    .ToListAsync();
+
+                return Ok(items);
+            }
+        }
+
+       
+        [HttpPost("{name}")]
+        public async Task<IActionResult> AddItem(string name)
+        {
+            int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+            var existingItem = await _context.Pantry
+                .FirstOrDefaultAsync(p => p.Name == name && p.UserId == userId);
+
+            if (existingItem != null)
+            {
+                existingItem.Quantity++;
+            }
+            else
+            {
+                var item = new Pantry
+                {
+                    Name = name,
+                    Quantity = 1,
+                    UserId = userId
+                };
                 _context.Pantry.Add(item);
             }
 
             await _context.SaveChangesAsync();
-            return Ok(item);
+            return Ok("Item added/updated successfully");
         }
 
+        
         [HttpDelete("{name}")]
         public async Task<IActionResult> RemoveItem(string name)
         {
-            var item = await _context.Pantry.FirstOrDefaultAsync(p => p.Name == name);
-            if (item == null) return NotFound();
+            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
-            if (item.Quantity == 1)
-            {
-                _context.Pantry.Remove(item);
-            }
+            var item = await _context.Pantry
+                .FirstOrDefaultAsync(p => p.Name == name && (p.UserId == userId || User.IsInRole("Admin")));
+
+            if (item == null)
+                return NotFound("Item not found");
+
             else
             {
                 item.Quantity--;
             }
-
             await _context.SaveChangesAsync();
-            return Ok(item);
+            return Ok("Item");
         }
 
         [HttpGet("paged")]
         public async Task<IActionResult> GetPaginatedItems(int page = 1, int pageSize = 5)
         {
-         
+            var role = User.FindFirst(ClaimTypes.Role)?.Value;
+            IQueryable<Pantry> query = _context.Pantry;
 
-            var totalItems = await _context.Pantry.CountAsync();
-
-            var items = await _context.Pantry
-                                      .OrderBy(p => p.Id)
-                                      .Skip((page - 1) * pageSize)
-                                      .Take(pageSize)
-                                      .ToListAsync();
-
-            var response = new
+            if (role != "Admin")
             {
-                TotalItems = totalItems,
-                Page = page,
-                PageSize = pageSize,
-                Items = items
-            };
+                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                query = query.Where(p => p.UserId == userId);
+            }
 
-            return Ok(response);
+            var totalItems = await query.CountAsync();
+            var items = await query
+                .OrderBy(p => p.Id)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            return Ok(new { items, totalItems });
         }
-
-
 
     }
 }
-
-
-

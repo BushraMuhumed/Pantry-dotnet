@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { useState, useEffect } from "react";
 import { AppBar, Box, Modal, Stack, TextField, Toolbar, Typography, Button } from "@mui/material";
 import axios from 'axios';
@@ -14,17 +15,44 @@ export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalItems, setTotalItems] = useState(0);
   const pageSize = 5;
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [isRegistering, setIsRegistering] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [loggedInUsername, setLoggedInUsername] = useState('');
+  const [loading, setLoading] = useState(false);
+  const router = useRouter(); 
+
+
+  
 
 
 
   const fetchData = async (page) => {
-
-    const res = await fetch(`http://localhost:5281/api/Pantry/paged?page=${page}&pageSize=${pageSize}`);
-    const result = await res.json();
-
-    setData(result.items);
-    setTotalItems(result.totalItems);
+    const token = localStorage.getItem('token');
+    if (token) {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    }
+  
+    try {
+      const { data: result } = await axios.get(`${API_BASE}/paged`, {
+        params: { page, pageSize }
+      });
+      console.log('paged result', result);
+      setData(result.items);
+      setTotalItems(result.totalItems);
+    } catch (err) {
+      console.error('Error fetching pantry:', err.response ?? err);
+    }
   };
+  
+  
+
+  
+
+  
 
   const totalPages = Math.ceil(totalItems / pageSize);
 
@@ -34,15 +62,31 @@ export default function Home() {
       
     }
   };
+  
 
-
-  useEffect(() => {
-    fetchData(currentPage);
-  }, [currentPage]);
 
   
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const storedUsername = localStorage.getItem('username');
+    if (token) {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      setIsLoggedIn(true);
+      setLoggedInUsername(storedUsername);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      fetchData(currentPage);  
+    }
+  }, [isLoggedIn, currentPage]);
+  
+    
+    
   const addItem = async (item) => {
     await axios.post(`${API_BASE}/${item}`);
+    console.log('Item added:', item);
     await fetchData(currentPage); 
     
   };
@@ -53,8 +97,71 @@ export default function Home() {
    
   };
 
+
+  
+ 
+
+  const handleAuth = async () => {
+  if (loading) return;
+  setLoading(true);
+  const endpoint = isRegistering ? 'register' : 'login';
+
+  try {
+    const payload = isRegistering
+      ? { email, password, username }
+      : { email, password };
+
+    const res = await axios.post(`http://localhost:5281/api/Auth/${endpoint}`, payload);
+    const { token, username: returnedUsername, role, userId } = res.data;
+
+    
+    localStorage.setItem('token', token);
+    localStorage.setItem('username', returnedUsername);
+    localStorage.setItem('role', role);
+    
+
+    if (token) {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    }
+
+    setIsLoggedIn(true);
+    setLoggedInUsername(returnedUsername);
+
+    setAuthModalOpen(false);
+    setEmail('');
+    setPassword('');
+    setUsername('');
+
+    console.log('Returned Role:', role);
+
+    
+    if (role === 'Admin') {
+      setTimeout(() => {
+        router.push('/admin');
+      }, 200);
+    }
+
+  } catch (err) {
+    console.error('Authentication error:', err.response ? err.response.data : err.message);
+    alert("the password or email you entered is incorrect");
+  } finally {
+    setLoading(false);
+  }
+};
+
   
 
+const logout = () => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('username');
+  delete axios.defaults.headers.common['Authorization'];
+  setIsLoggedIn(false);
+  setLoggedInUsername('');
+  setData([]);
+  setFilteredPantry([]);
+};
+
+  
 
   useEffect(() => {
     setFilteredPantry(
@@ -62,11 +169,22 @@ export default function Home() {
         item.name.toLowerCase().includes(searchTerm.toLowerCase())
       )
     );
+    console.log(filteredPantry);
   }, [searchTerm, data]);
+
+  const handleOpen = () => {
+    if (!isLoggedIn) {
+      alert('Please login or register first to add items.');
+      setAuthModalOpen(true);
+    } else {
+      setOpen(true);
+    }
+  };
+  
   
 
 
-  const handleOpen = () => setOpen(true);
+  
   const handleClose = () => setOpen(false);
 
   return (
@@ -88,8 +206,79 @@ export default function Home() {
           >
             Pantry Tracker
           </Typography>
+
+                    {isLoggedIn ? (
+                      
+            <Button color="inherit" onClick={logout}>
+              Logout
+            </Button>
+          ) : (
+            <Button color="inherit" onClick={() => setAuthModalOpen(true)}>
+              Login / Register
+            </Button>
+          )}
+          
         </Toolbar>
       </AppBar>
+
+      <Modal open={authModalOpen} onClose={() => setAuthModalOpen(false)}>
+        <Box
+          position="absolute"
+          top="50%"
+          left="50%"
+          width={400}
+          bgcolor="#fff"
+          border="2px solid #591814"
+          boxShadow={24}
+          p={4}
+          sx={{ transform: "translate(-50%, -50%)", borderRadius: 8 }}
+          display="flex"
+          flexDirection="column"
+          gap={2}
+        >
+          
+          <Typography variant="h6">{isRegistering ? 'Register' : 'Login'}</Typography>
+          {isRegistering && (
+                <TextField
+                  label="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  fullWidth
+                />
+              )}
+          <TextField
+            label="Email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            fullWidth
+          />
+          <TextField
+            label="Password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            fullWidth
+          />
+          <Button
+            variant="contained"
+            onClick={handleAuth}
+            sx={{ bgcolor: '#bb7266', '&:hover': { bgcolor: '#815236' } }}
+            disabled={loading}
+          >
+            
+            {isRegistering ? 'Register' : 'Login'}
+          </Button>
+          <Button
+            variant="text"
+            onClick={() => setIsRegistering(!isRegistering)}
+          >
+
+            {isRegistering ? 'Have an account? Login' : "Don't have an account? Register"}
+          </Button>
+        </Box>
+      </Modal>
+
 
       <Box
         marginTop="64px" 
