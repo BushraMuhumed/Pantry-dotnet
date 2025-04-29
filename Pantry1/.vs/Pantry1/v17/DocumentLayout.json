@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,14 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\controllers\\pantrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\controllers\\pantrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -101,50 +101,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 294,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Pantry.cs",
-              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\Pantry.cs",
-              "RelativeDocumentMoniker": "Pantry1\\Models\\Pantry.cs",
-              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\Pantry.cs",
-              "RelativeToolTip": "Pantry1\\Models\\Pantry.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBAAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T14:56:03.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Pantry1\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Pantry1\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAAACkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T06:51:10.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PantryController.cs",
-              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\PantryController.cs",
-              "RelativeDocumentMoniker": "Pantry1\\Controllers\\PantryController.cs",
-              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\PantryController.cs",
-              "RelativeToolTip": "Pantry1\\Controllers\\PantryController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T14:55:19.523Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\User.cs",
               "RelativeDocumentMoniker": "Pantry1\\Models\\User.cs",
@@ -152,12 +113,11 @@
               "RelativeToolTip": "Pantry1\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T06:58:19.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T06:58:19.373Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "RegisterModel.cs",
               "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\RegisterModel.cs",
               "RelativeDocumentMoniker": "Pantry1\\Models\\RegisterModel.cs",
@@ -165,34 +125,70 @@
               "RelativeToolTip": "Pantry1\\Models\\RegisterModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T06:15:09.677Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T06:15:09.677Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Program.cs",
               "RelativeDocumentMoniker": "Pantry1\\Program.cs",
               "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Program.cs",
               "RelativeToolTip": "Pantry1\\Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACYAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAC8AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T15:00:07.115Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Pantry1\\Controllers\\AdminController.cs",
               "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\AdminController.cs",
               "RelativeToolTip": "Pantry1\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-26T08:32:52.098Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Pantry1\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Pantry1\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T06:51:10.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PantryController.cs",
+              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\PantryController.cs",
+              "RelativeDocumentMoniker": "Pantry1\\Controllers\\PantryController.cs",
+              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\PantryController.cs",
+              "RelativeToolTip": "Pantry1\\Controllers\\PantryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T14:55:19.523Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Pantry.cs",
+              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\Pantry.cs",
+              "RelativeDocumentMoniker": "Pantry1\\Models\\Pantry.cs",
+              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\Pantry.cs",
+              "RelativeToolTip": "Pantry1\\Models\\Pantry.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T14:56:03.624Z"
             },
             {
               "$type": "Document",

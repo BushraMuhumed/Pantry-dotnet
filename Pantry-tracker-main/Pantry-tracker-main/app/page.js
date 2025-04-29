@@ -112,7 +112,7 @@ export default function Home() {
       : { email, password };
 
     const res = await axios.post(`http://localhost:5281/api/Auth/${endpoint}`, payload);
-    const { token, username: returnedUsername, role, userId } = res.data;
+    const { token, username: returnedUsername, role } = res.data;
 
     
     localStorage.setItem('token', token);
