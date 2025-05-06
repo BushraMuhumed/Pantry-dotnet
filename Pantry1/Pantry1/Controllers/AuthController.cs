@@ -25,10 +25,11 @@ namespace Pantry1API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterModel model)
         {
-            if (await _context.Users.AnyAsync(u => u.Email == model.Email))
-                return BadRequest(new { message = "Email already registered" });
-            if (await _context.Users.AnyAsync(u => u.Username == model.Username))
-                return BadRequest(new { message = "username already exists" });
+           
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { message = "model failed" });
+            }
 
             var user = new User
             {
@@ -49,7 +50,7 @@ namespace Pantry1API.Controllers
                new Claim(ClaimTypes.Role, user.Role)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"] ?? ""));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
@@ -81,11 +82,11 @@ namespace Pantry1API.Controllers
             var claims = new[]
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, user.Username),
-                new Claim(ClaimTypes.Role, user.Role)
+                new Claim(ClaimTypes.Name, user.Username ?? ""),
+                new Claim(ClaimTypes.Role, user.Role ?? "")
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"] ?? ""));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(

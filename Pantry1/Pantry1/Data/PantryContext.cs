@@ -10,6 +10,7 @@ namespace Pantry1API.Data
         public DbSet<Pantry> Pantry { get; set; }
         public DbSet<User> Users { get; set; }
 
+
         
     }
 }

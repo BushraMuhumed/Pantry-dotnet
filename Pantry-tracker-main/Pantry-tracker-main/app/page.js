@@ -1,8 +1,11 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from "react";
-import { AppBar, Box, Modal, Stack, TextField, Toolbar, Typography, Button } from "@mui/material";
+import { Box, Modal, Stack, TextField, Typography, Button } from "@mui/material";
 import axios from 'axios';
+import AppBarHeader from '../components/AppbarHeader';
+import Pagination from '../components/pagination';
+import Auth from '@/components/auth';
 
 const API_BASE = 'http://localhost:5281/api/Pantry'; 
 export default function Home() {
@@ -11,22 +14,15 @@ export default function Home() {
   const [itemname, setItemname] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredPantry, setFilteredPantry] = useState([]);
+  const [loggedInUsername, setLoggedInUsername] = useState('');
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalItems, setTotalItems] = useState(0);
   const pageSize = 5;
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const [isRegistering, setIsRegistering] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [username, setUsername] = useState('');
-  const [loggedInUsername, setLoggedInUsername] = useState('');
-  const [loading, setLoading] = useState(false);
   const router = useRouter(); 
-
-
-  
+  const [role, setRole] = useState('');
 
 
 
@@ -48,31 +44,18 @@ export default function Home() {
     }
   };
   
+ 
   
 
-  
-
-  
-
-  const totalPages = Math.ceil(totalItems / pageSize);
-
-  const handlePageChange = (page) => {
-    if (page >= 1 && page <= totalPages) {
-      setCurrentPage(page);
-      
-    }
-  };
-  
-
-
-  
   useEffect(() => {
     const token = localStorage.getItem('token');
     const storedUsername = localStorage.getItem('username');
+    const storedRole = localStorage.getItem('role');
     if (token) {
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       setIsLoggedIn(true);
       setLoggedInUsername(storedUsername);
+      setRole(storedRole);
     }
   }, []);
 
@@ -86,7 +69,6 @@ export default function Home() {
     
   const addItem = async (item) => {
     await axios.post(`${API_BASE}/${item}`);
-    console.log('Item added:', item);
     await fetchData(currentPage); 
     
   };
@@ -98,71 +80,17 @@ export default function Home() {
   };
 
 
-  
- 
-
-  const handleAuth = async () => {
-  if (loading) return;
-  setLoading(true);
-  const endpoint = isRegistering ? 'register' : 'login';
-
-  try {
-    const payload = isRegistering
-      ? { email, password, username }
-      : { email, password };
-
-    const res = await axios.post(`http://localhost:5281/api/Auth/${endpoint}`, payload);
-    const { token, username: returnedUsername, role } = res.data;
-
-    
-    localStorage.setItem('token', token);
-    localStorage.setItem('username', returnedUsername);
-    localStorage.setItem('role', role);
-    
-
-    if (token) {
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    }
-
-    setIsLoggedIn(true);
-    setLoggedInUsername(returnedUsername);
-
-    setAuthModalOpen(false);
-    setEmail('');
-    setPassword('');
-    setUsername('');
-
-    console.log('Returned Role:', role);
-
-    
-    if (role === 'Admin') {
-      setTimeout(() => {
-        router.push('/admin');
-      }, 200);
-    }
-
-  } catch (err) {
-    console.error('Authentication error:', err.response ? err.response.data : err.message);
-    alert("the password or email you entered is incorrect");
-  } finally {
-    setLoading(false);
-  }
-};
-
-  
 
 const logout = () => {
   localStorage.removeItem('token');
   localStorage.removeItem('username');
+  localStorage.removeItem('role')
   delete axios.defaults.headers.common['Authorization'];
   setIsLoggedIn(false);
   setLoggedInUsername('');
   setData([]);
   setFilteredPantry([]);
 };
-
-  
-
   useEffect(() => {
     setFilteredPantry(
       data.filter(item =>
@@ -181,104 +109,39 @@ const logout = () => {
     }
   };
   
-  
-
-
-  
+ 
   const handleClose = () => setOpen(false);
 
   return (
-    <Box
-      width="100vw"
-      height="100vh"
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      gap={2}
-      sx={{ backgroundColor: '#d3d6cf', padding: 2 }}
-    >
-      <AppBar position="fixed" color="primary" sx={{ top: 0, left: 0, right: 0, bgcolor: '#591814' }}>
-        <Toolbar>
-          <Typography
-            variant="h5"
-            sx={{ flexGrow: 1 }}
-            style={{ fontFamily: 'Butler, Playfair Display, serif' }}
-          >
-            Pantry Tracker
-          </Typography>
+<Box 
+  width="100vw" 
+  minHeight="100vh" 
+  display="flex" 
+  flexDirection="column" 
+  alignItems="center" 
+  gap={2} 
+  sx={{ 
+    backgroundColor: '#d3d6cf', 
+    padding: 2, 
+    overflowX: 'hidden',
+    overflowY: 'auto'
+  }}
+>
 
-                    {isLoggedIn ? (
-                      
-            <Button color="inherit" onClick={logout}>
-              Logout
-            </Button>
-          ) : (
-            <Button color="inherit" onClick={() => setAuthModalOpen(true)}>
-              Login / Register
-            </Button>
-          )}
-          
-        </Toolbar>
-      </AppBar>
-
-      <Modal open={authModalOpen} onClose={() => setAuthModalOpen(false)}>
-        <Box
-          position="absolute"
-          top="50%"
-          left="50%"
-          width={400}
-          bgcolor="#fff"
-          border="2px solid #591814"
-          boxShadow={24}
-          p={4}
-          sx={{ transform: "translate(-50%, -50%)", borderRadius: 8 }}
-          display="flex"
-          flexDirection="column"
-          gap={2}
-        >
-          
-          <Typography variant="h6">{isRegistering ? 'Register' : 'Login'}</Typography>
-          {isRegistering && (
-                <TextField
-                  label="Username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  fullWidth
-                />
-              )}
-          <TextField
-            label="Email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            fullWidth
-          />
-          <TextField
-            label="Password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            fullWidth
-          />
-          <Button
-            variant="contained"
-            onClick={handleAuth}
-            sx={{ bgcolor: '#bb7266', '&:hover': { bgcolor: '#815236' } }}
-            disabled={loading}
-          >
-            
-            {isRegistering ? 'Register' : 'Login'}
-          </Button>
-          <Button
-            variant="text"
-            onClick={() => setIsRegistering(!isRegistering)}
-          >
-
-            {isRegistering ? 'Have an account? Login' : "Don't have an account? Register"}
-          </Button>
-        </Box>
-      </Modal>
-
+    <AppBarHeader
+      isLoggedIn={isLoggedIn}
+      role={role}
+      logout={logout}
+      setAuthModalOpen={setAuthModalOpen}
+      />
+      <Auth 
+      open={authModalOpen}
+      onClose={() => setAuthModalOpen(false)}
+      onLoginSuccess={({ username , role}) =>{
+        setIsLoggedIn(true);
+        setLoggedInUsername(username);
+        setRole(role);
+      }}/>
 
       <Box
         marginTop="64px" 
@@ -368,9 +231,7 @@ const logout = () => {
               Pantry Tracker
             </Typography>
           </Box>
-    
-
-          <Stack width="100%" spacing={2} overflow="auto">
+           <Stack width="100%" spacing={2} overflow="auto">
             {filteredPantry.map(({ name, quantity }) => (
               <Box
                 key={name}
@@ -412,29 +273,11 @@ const logout = () => {
               </Box>
             ))}
           </Stack>
-
-
-      <div className="flex justify-center items-center space-x-2 mt-4">
-        <button
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-          className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
-        >
-          Prev
-        </button>
-
-      
-
-        <button
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-          className="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
-        >
-          Next
-        </button>
-      </div>
-
-
+          <Pagination
+          currentPage={currentPage}
+          totalItems={totalItems}
+          pageSize={pageSize}
+          setCurrentPage={(page) => setCurrentPage(page)} />
         </Box>
       </Box>
     </Box>

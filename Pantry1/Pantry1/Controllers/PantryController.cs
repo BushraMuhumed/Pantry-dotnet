@@ -5,7 +5,7 @@ using Pantry1API.Data;
 using Pantry1API.Models;
 using System.Security.Claims;
 
-namespace Pantry1API.Controllers
+namespace Pantry1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -44,7 +44,8 @@ namespace Pantry1API.Controllers
             else
             {
                 
-                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
+
 
                 var items = await _context.Pantry
                     .Where(p => p.UserId == userId)
@@ -64,7 +65,7 @@ namespace Pantry1API.Controllers
         [HttpPost("{name}")]
         public async Task<IActionResult> AddItem(string name)
         {
-            int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            int userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
 
             var existingItem = await _context.Pantry
                 .FirstOrDefaultAsync(p => p.Name == name && p.UserId == userId);
@@ -85,14 +86,14 @@ namespace Pantry1API.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return Ok("Item added/updated successfully");
+            return Ok("Item");
         }
 
         
         [HttpDelete("{name}")]
         public async Task<IActionResult> RemoveItem(string name)
         {
-            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
 
             var item = await _context.Pantry
                 .FirstOrDefaultAsync(p => p.Name == name && (p.UserId == userId || User.IsInRole("Admin")));
@@ -100,6 +101,10 @@ namespace Pantry1API.Controllers
             if (item == null)
                 return NotFound("Item not found");
 
+            if(item.Quantity <= 1)
+            {
+                _context.Pantry.Remove(item);
+            }
             else
             {
                 item.Quantity--;
@@ -116,7 +121,8 @@ namespace Pantry1API.Controllers
 
             if (role != "Admin")
             {
-                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
+
                 query = query.Where(p => p.UserId == userId);
             }
 

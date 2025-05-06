@@ -1,8 +1,9 @@
 'use client';
 import { useState, useEffect } from "react";
-import { AppBar, Box, Stack, TextField, Toolbar, Typography, Button, ButtonGroup } from "@mui/material";
+import { AppBar, Box, Stack, TextField, Toolbar, Typography, Button, ButtonGroup,Menu,MenuItem, IconButton } from "@mui/material";
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+
 
 const API_BASE = 'http://localhost:5281/api'; 
 
@@ -46,10 +47,6 @@ export default function Admin() {
     }
   };
   
-
-
-  
-  
   
   const promoteToAdmin = async (id) => {
     try {
@@ -75,41 +72,83 @@ export default function Admin() {
       }
     }
   };
+  const [anchorEl, setAnchorEl] = useState(null);
+const menuOpen = Boolean(anchorEl);
+
+const handleMenuClick = (event) => {
+  setAnchorEl(event.currentTarget);
+};
+
+const handleMenuClose = () => {
+  setAnchorEl(null);
+};
+
 
   return (
-    <Box
-      width="100vw"
-      height="100vh"
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      gap={2}
-      sx={{ backgroundColor: '#f0f0f0', padding: 2 }}
-    >
-      <AppBar position="fixed" color="primary" sx={{ top: 0, left: 0, right: 0, bgcolor: '#591814' }}>
+    <Box 
+  width="100vw" 
+  minHeight="100vh" 
+  display="flex" 
+  flexDirection="column" 
+  alignItems="center" 
+  gap={2} 
+  sx={{ 
+    backgroundColor: '#d3d6cf', 
+    padding: 2, 
+    overflowX: 'hidden',
+    overflowY: 'auto'
+  }}
+>
+      <AppBar position="fixed" color="primary" sx={{ top: 0, left: 0, right: 0, bgcolor: '#4dabf5' }}>
         <Toolbar>
           <Typography variant="h5" sx={{ flexGrow: 1 }} style={{ fontFamily: 'Butler, Playfair Display, serif' }}>
             Admin Dashboard
           </Typography>
           <Button
-      color="inherit"
-      onClick={() => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('username');
-        delete axios.defaults.headers.common['Authorization'];
-        router.push('/'); 
-      }}
-    >
-      Logout
-    </Button>
+  color="inherit"
+  onClick={handleMenuClick}
+  sx={{ textTransform: 'none' }}
+>
+  Menu
+</Button>
+
+<Menu
+  anchorEl={anchorEl}
+  open={menuOpen}
+  onClose={handleMenuClose}
+>
+  <MenuItem
+    onClick={() => {
+      handleMenuClose();
+      router.push('/admin');
+    }}
+  >
+    Admin Dashboard
+  </MenuItem>
+  <MenuItem
+  
+    onClick={() => router.push('/')}
+  >
+    My Pantry
+  </MenuItem>
+  <MenuItem
+    onClick={() => {
+      handleMenuClose();
+      localStorage.removeItem('token');
+      localStorage.removeItem('username');
+      delete axios.defaults.headers.common['Authorization'];
+      router.push('/');
+    }}
+  >
+    Logout
+  </MenuItem>
+</Menu>
+
         </Toolbar>
       </AppBar>
 
       <Box marginTop="64px" width="100%" display="flex" flexDirection="column" alignItems="center" gap={2}>
-        <Typography variant="h4" color="#591814">Registered Users</Typography>
-
-       
-
+        <Typography variant="h4" color="#591814">Registered Users</Typography>   
         <Box width="80%" bgcolor="#fff" borderRadius="12px" boxShadow="0px 4px 12px rgba(0, 0, 0, 0.15)" p={2} mt={2}>
           <Stack spacing={2}>
             {users.map((user) => (
@@ -118,12 +157,9 @@ export default function Admin() {
                 display="flex"
                 justifyContent="space-between"
                 alignItems="center"
-                bgcolor="#f9f9f9"
-                p={2}
-                borderRadius="8px"
-                border="1px solid #ddd"
+                bgcolor="#f9f9f9" p={2} borderRadius="8px" border="1px solid #ddd"
               >
-                <Typography variant="h6">{user.username}</Typography>
+                <Typography variant="h6" color="#591814">{user.username}</Typography>
                 <Box>
                 <ButtonGroup >
                 <Button
@@ -144,11 +180,7 @@ export default function Admin() {
                 <Button
                     variant="contained"
                     onClick={() => promoteToAdmin(user.id)}
-                    sx={{
-                    borderRadius: '20px',
-                    bgcolor: '#bb7266',
-                    color: '#ffffff',
-                    boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
+                    sx={{borderRadius: '20px',bgcolor: '#bb7266',color: '#ffffff', boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
                     '&:hover': { bgcolor: '#a15c51' },
                     textTransform: 'none',
                     px: 3,
@@ -186,8 +218,8 @@ export default function Admin() {
             <Stack spacing={2}>
               {selectedUser.pantryItems.map((item) => (
                 <Box key={item.id} display="flex" justifyContent="space-between" alignItems="center" bgcolor="#f9f9f9" p={2} borderRadius="8px" border="1px solid #ddd">
-                  <Typography variant="body1">{item.name}</Typography>
-                  <Typography variant="body1">{item.quantity}</Typography>
+                  <Typography variant="body1" color="#591814">{item.name}</Typography>
+                  <Typography variant="body1" color="#591814">{item.quantity}</Typography>
                 </Box>
               ))}
             </Stack>
@@ -197,3 +229,4 @@ export default function Admin() {
     </Box>
   );
 }
+ 

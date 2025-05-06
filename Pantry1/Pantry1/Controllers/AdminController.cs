@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pantry1API.Data;
-using Pantry1API.Models;
 
 namespace Pantry1API.Controllers
 {

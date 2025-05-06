@@ -1,4 +1,6 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace Pantry1API.Models
 {
     public class Pantry
@@ -6,14 +8,14 @@ namespace Pantry1API.Models
         
         public int Id { get; set; }
 
-        
-        public string Name { get; set; }
+        [Required]
+        public string? Name { get; set; }
 
         public int Quantity { get; set; }
 
         public int UserId { get; set; }
 
-       
-        public User User { get; set; }
+
+        public User? User { get; set; } 
     }
 }

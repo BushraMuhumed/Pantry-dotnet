@@ -90,7 +90,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Pantry1API.Controllers.PantryController",
+    "ContainingType": "Pantry1.Controllers.PantryController",
     "Method": "GetPantryItems",
     "RelativePath": "api/Pantry",
     "HttpMethod": "GET",
@@ -100,7 +100,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Pantry1API.Controllers.PantryController",
+    "ContainingType": "Pantry1.Controllers.PantryController",
     "Method": "AddItem",
     "RelativePath": "api/Pantry/{name}",
     "HttpMethod": "POST",
@@ -116,7 +116,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Pantry1API.Controllers.PantryController",
+    "ContainingType": "Pantry1.Controllers.PantryController",
     "Method": "RemoveItem",
     "RelativePath": "api/Pantry/{name}",
     "HttpMethod": "DELETE",
@@ -132,7 +132,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Pantry1API.Controllers.PantryController",
+    "ContainingType": "Pantry1.Controllers.PantryController",
     "Method": "GetPaginatedItems",
     "RelativePath": "api/Pantry/paged",
     "HttpMethod": "GET",

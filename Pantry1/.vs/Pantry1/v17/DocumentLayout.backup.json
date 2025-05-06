@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\controllers\\pantrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\controllers\\pantrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\models\\pantry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\models\\pantry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\data\\pantrycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\data\\pantrycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,24 +35,16 @@
       "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\controllers\\pantrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\controllers\\pantrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\migrations\\20250429062128_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\migrations\\20250429062128_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\data\\pantrycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\data\\pantrycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|solutionrelative:pantry1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25AFD6E5-1E18-48EF-8AD4-96FF8B7B856E}|Pantry1\\Pantry1.csproj|c:\\users\\taeeu\\desktop\\pantry\\pantry1\\pantry1\\pantry1.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
@@ -100,44 +100,59 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 294,
-          "SelectedChildIndex": 4,
+          "DockedHeight": 269,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Pantry1\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\User.cs",
-              "RelativeToolTip": "Pantry1\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Pantry1\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Pantry1\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAF0AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T06:58:19.373Z"
+              "WhenOpened": "2025-04-23T06:51:10.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PantryController.cs",
+              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\PantryController.cs",
+              "RelativeDocumentMoniker": "Pantry1\\Controllers\\PantryController.cs",
+              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\PantryController.cs",
+              "RelativeToolTip": "Pantry1\\Controllers\\PantryController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAswCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T14:55:19.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "Pantry1\\Models\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\LoginModel.cs",
+              "RelativeToolTip": "Pantry1\\Models\\LoginModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAYwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T06:15:46.608Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "RegisterModel.cs",
-              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\RegisterModel.cs",
-              "RelativeDocumentMoniker": "Pantry1\\Models\\RegisterModel.cs",
-              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\RegisterModel.cs",
-              "RelativeToolTip": "Pantry1\\Models\\RegisterModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Title": "PantryContext.cs",
+              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Data\\PantryContext.cs",
+              "RelativeDocumentMoniker": "Pantry1\\Data\\PantryContext.cs",
+              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Data\\PantryContext.cs",
+              "RelativeToolTip": "Pantry1\\Data\\PantryContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T06:15:09.677Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Program.cs",
-              "RelativeDocumentMoniker": "Pantry1\\Program.cs",
-              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Program.cs",
-              "RelativeToolTip": "Pantry1\\Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAC8AAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T15:00:07.115Z",
+              "WhenOpened": "2025-04-18T14:56:41.448Z",
               "EditorCaption": ""
             },
             {
@@ -148,51 +163,66 @@
               "RelativeDocumentMoniker": "Pantry1\\Controllers\\AdminController.cs",
               "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\AdminController.cs",
               "RelativeToolTip": "Pantry1\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowCkAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-26T08:32:52.098Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Pantry1\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Pantry1\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCEAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T06:51:10.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PantryController.cs",
-              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\PantryController.cs",
-              "RelativeDocumentMoniker": "Pantry1\\Controllers\\PantryController.cs",
-              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Controllers\\PantryController.cs",
-              "RelativeToolTip": "Pantry1\\Controllers\\PantryController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T14:55:19.523Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Pantry.cs",
               "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\Pantry.cs",
               "RelativeDocumentMoniker": "Pantry1\\Models\\Pantry.cs",
               "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\Pantry.cs",
               "RelativeToolTip": "Pantry1\\Models\\Pantry.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBAAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAYwBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T14:56:03.624Z"
+              "WhenOpened": "2025-04-18T14:56:03.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RegisterModel.cs",
+              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\RegisterModel.cs",
+              "RelativeDocumentMoniker": "Pantry1\\Models\\RegisterModel.cs",
+              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\RegisterModel.cs",
+              "RelativeToolTip": "Pantry1\\Models\\RegisterModel.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwB4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T06:05:29.031Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Pantry1\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\User.cs",
+              "RelativeToolTip": "Pantry1\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T06:58:19.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Program.cs",
+              "RelativeDocumentMoniker": "Pantry1\\Program.cs",
+              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Program.cs",
+              "RelativeToolTip": "Pantry1\\Program.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T15:00:07.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\appsettings.json",
               "RelativeDocumentMoniker": "Pantry1\\appsettings.json",
@@ -200,31 +230,8 @@
               "RelativeToolTip": "Pantry1\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAByAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-18T15:01:29.617Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "LoginModel.cs",
-              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\LoginModel.cs",
-              "RelativeDocumentMoniker": "Pantry1\\Models\\LoginModel.cs",
-              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Models\\LoginModel.cs",
-              "RelativeToolTip": "Pantry1\\Models\\LoginModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T06:15:46.608Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PantryContext.cs",
-              "DocumentMoniker": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Data\\PantryContext.cs",
-              "RelativeDocumentMoniker": "Pantry1\\Data\\PantryContext.cs",
-              "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Data\\PantryContext.cs",
-              "RelativeToolTip": "Pantry1\\Data\\PantryContext.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAwAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T14:56:41.448Z"
+              "WhenOpened": "2025-04-18T15:01:29.617Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -360,12 +367,20 @@
           ]
         },
         {
-          "DockedHeight": 106,
-          "SelectedChildIndex": 1,
+          "DockedHeight": 131,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
@@ -375,7 +390,7 @@
               "RelativeDocumentMoniker": "Pantry1\\Migrations\\20250429062128_InitialCreate.cs",
               "ToolTip": "C:\\Users\\taeeu\\Desktop\\pantry\\Pantry1\\Pantry1\\Migrations\\20250429062128_InitialCreate.cs",
               "RelativeToolTip": "Pantry1\\Migrations\\20250429062128_InitialCreate.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAQwC8AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-29T06:21:29.121Z",
               "EditorCaption": ""
@@ -391,18 +406,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T10:00:44.386Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             }
           ]
         }
